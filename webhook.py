@@ -60,7 +60,7 @@ def makeResponse(res):
 			"source": "example.com",
 			"payload": {
 			  "google": {
-				"expectUserResponse": true,
+				"expectUserResponse": "true",
 				"richResponse": {
 				  "items": [
 					{
@@ -81,7 +81,7 @@ def makeResponse(res):
 			"outputContexts": [
 			  {
 				"name": "projects/${PROJECT_ID}/agent/sessions/${SESSION_ID}/contexts/context name",
-				"lifespanCount": 5,
+				"lifespanCount": "5",
 				"parameters": {
 				  "param": "param value"
 				}
