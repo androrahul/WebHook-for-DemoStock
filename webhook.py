@@ -25,10 +25,19 @@ def stock():
 def makeResponse(res):
 	#result = res.get("result");
 	speech = "This is news."
+	#return {
+	#"speech":speech,
+	#"displayText":speech,
+	#"source":"apiai-demostock-webhook"
+	#}
+	
 	return {
-	"speech":speech,
-	"displayText":speech,
-	"source":"apiai-demostock-webhook"
+		"fulfillmentText": speech,
+		"fulfillmentMessages": [
+			{
+				"speech":speech
+			}
+		]
 	}
 	
 if __name__ == '__main__':
