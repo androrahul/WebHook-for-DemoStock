@@ -23,12 +23,12 @@ def webhook():
     return r
 	
 def makeResponse(res):
-	result = res.get('result');
+	result = res.get("result");
 	speech = "This is news."
 	return {
-	"speech": speech,
-	"displayText": speech,
-	"source": "apiai-demostock-webhook"
+	"speech":speech,
+	"displayText":speech,
+	"source":"apiai-demostock-webhook"
 	}
 	
 if __name__ == '__main__':
