@@ -94,6 +94,7 @@ def makeResponse(res):
 				"param": "param value"
 			  }
 			}
+		}
 	
 	
 if __name__ == '__main__':
