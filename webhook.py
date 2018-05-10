@@ -23,7 +23,7 @@ def stock():
     return r
 	
 def makeResponse(res):
-	result = res.get("result");
+	#result = res.get("result");
 	speech = "This is news."
 	return {
 	"speech":speech,
