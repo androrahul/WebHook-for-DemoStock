@@ -23,14 +23,27 @@ def stock():
     return r
 	
 def makeResponse(res):
-	#result = res.get("result");
 	speech = "This is news."
+	
 	return {
-		"speech":speech,
-		"displayText":speech,
-		"contextOut":[],
-		"source":"apiai-demostock-webhook"
-	}
+			"speech":speech,
+			"displayText":speech,		
+			"fulfillmentText": "This is a text response",
+			"fulfillmentMessages": [
+				  {
+					"text": {
+					  "text": [
+						"lease tell me your first name"
+					  ]
+				 }
+			  }
+			],
+			"source": "apiai-demostock-webhook",
+			"payload": {},
+			"outputContexts": [],
+			"followupEventInput": {}
+		}
+	
 	
 	
 if __name__ == '__main__':
