@@ -46,12 +46,12 @@ def makeResponse(res):
 			"fulfillmentText": "This is a text response",
 			"fulfillmentMessages": [
 				  {
-					{
+					
 						"text": {
 						  "text": [
 							"lease tell me your first name"
 						  ]
-					}
+					
 				 }
 			  }
 			],
