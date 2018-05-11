@@ -25,11 +25,11 @@ def stock():
 def makeResponse(res):
 	#result = res.get("result");
 	speech = "This is news."
-	return {
-	"speech":speech,
-	"displayText":speech,
-	"source":"apiai-demostock-webhook"
-	}
+	#return {
+	#"speech":speech,
+	#"displayText":speech,
+	#"source":"apiai-demostock-webhook"
+	#}
 	
 	#return {
 	#	"fulfillmentText": speech,
@@ -96,6 +96,53 @@ def makeResponse(res):
 	#		}
 	#	}
 	#
+	
+	return {
+		"speech": "this text is spoken out loud if the platform supports voice interactions",
+		"displayText": "this text is displayed visually",
+		"messages": {
+		  "type": 1,
+		  "title": "card title",
+		  "subtitle": "card text",
+		  "imageUrl": "https://assistant.google.com/static/images/molecule/Molecule-Formation-stop.png"
+		},
+		"data": {
+		  "google": {
+			"expectUserResponse": true,
+			"richResponse": {
+			  "items": [
+				{
+				  "simpleResponse": {
+					"textToSpeech": "this is a simple response"
+				  }
+				}
+			  ]
+			}
+		  },
+		  "facebook": {
+			"text": "Hello, Facebook!"
+		  },
+		  "slack": {
+			"text": "This is a text response for Slack."
+		  }
+		},
+		"contextOut": [
+		  {
+			"name": "context name",
+			"lifespan": 5,
+			"parameters": {
+			  "param": "param value"
+			}
+		  }
+		],
+		"source": "example.com",
+		"followupEvent": {
+		  "name": "event name",
+		  "parameters": {
+			"param": "param value"
+		  }
+		}
+	}
 	
 if __name__ == '__main__':
     port = int(os.getenv('PORT', 5000))
