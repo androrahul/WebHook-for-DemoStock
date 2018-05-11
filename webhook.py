@@ -41,6 +41,8 @@ def makeResponse(res):
 	#}
 	
 	return {
+			"speech":speech,
+			"displayText":speech,		
 			"fulfillmentText": "This is a text response",
 			"fulfillmentMessages": [
 			  {
