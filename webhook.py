@@ -108,7 +108,7 @@ def makeResponse(res):
 		},
 		"data": {
 		  "google": {
-			"expectUserResponse": true,
+			"expectUserResponse": "true",
 			"richResponse": {
 			  "items": [
 				{
@@ -129,7 +129,7 @@ def makeResponse(res):
 		"contextOut": [
 		  {
 			"name": "context name",
-			"lifespan": 5,
+			"lifespan": "5",
 			"parameters": {
 			  "param": "param value"
 			}
