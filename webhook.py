@@ -22,13 +22,46 @@ def stock():
     r.headers['Content-Type'] = 'application/json'
     return r
 	
-def makeResponse(res):
-	speech = "This is news."
+def makeResponse(req):
 	
-	response = commonResponse(speech)
+	result = req.get("result")
+	action = request.get("action")
 	
-	return response
+	if x == 'stock.news':
+		return getNewsDetails(req)
+	elif x == 'stock.research':
+		return getResearch(req)
+	#if x in 'bc':
+		# Fall-through by not using elif, but now the default case includes case 'a'!
+	#elif x in 'xyz':
+		# Do yet another thing
+	else:
+		return commonResponse("Sorry, I did't get you ?")
+	
+	
+def getNewsDetails(req):
+
+	# Request to get current news
+	r=requests.get('https://newsapi.org/v2/top-headlines?country=in&apiKey=2e1b4cacd0694ac193f8e2659b82bed2')
+    
+	# Output response of news API
+	json_object = r.json()
+	
+	dataSet=json_object['articles']
+	temp = ""
+	speech = ""
+	
+	for data in dataSet:
+		title = data["title"]
+ 		desc = data["description"]
+ 		speech = title + ' ' + desc
+ 		temp = temp + speech
 		
+    return commonResponse(temp)
+
+def getResearch(req)
+	msg = "Today's fundamental research call. Buy Grasim Industries Limited. C M P rupees 1089. Target price Rupees 1300 with potential upside of 18 percent."
+	return commonResponse(msg)
 		
 def commonResponse(msg):
 	return {
