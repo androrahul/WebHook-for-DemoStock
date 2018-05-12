@@ -49,11 +49,11 @@ def getNewsDetails(req):
 	
 	dataSet=json_object['articles']
 	temp = ""
-	speech = ""
+	speech = "Today top new is : "
 	
 	for data in dataSet:
-		title = data["title"]
- 		desc = data["description"]
+		title = data.get("title")
+ 		desc = data.get("description")
  		speech = title + ' ' + desc
  		temp = temp + speech
 		
