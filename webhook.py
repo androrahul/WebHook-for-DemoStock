@@ -53,20 +53,20 @@ def getNewsDetails(req):
 	
 	for data in dataSet:
 		title = data["title"]
- 		desc = data["description"]
- 		speech = title + ' ' + desc
- 		temp = temp + speech
+		desc=data['description']
+		speech = title + ' ' + desc
+		temp = temp + speech
 		
-    return commonResponse(temp)
+	return commonResponse(temp)
 
-def getResearch(req)
-	msg = "Today's fundamental research call. Buy Grasim Industries Limited. C M P rupees 1089. Target price Rupees 1300 with potential upside of 18 percent."
-	return commonResponse(msg)
+def getResearch(req):
+		msg="Today's fundamental research call. Buy Grasim Industries Limited. C M P rupees 1089. Target price Rupees 1300 with potential upside of 18 percent."
+		return commonResponse(msg)
 		
 def commonResponse(msg):
 	return {
 			"speech":msg,
-			"displayText":msg,		
+			"displayText":msg,
 			"source": "apiai-demostock-webhook"
 	}
 	
