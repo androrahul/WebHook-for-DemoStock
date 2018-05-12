@@ -25,7 +25,7 @@ def stock():
 def makeResponse(req):
 	
 	result = req.get("result")
-	action = request.get("action")
+	action = result.get("action")
 	
 	if x == 'stock.news':
 		return getNewsDetails(req)
