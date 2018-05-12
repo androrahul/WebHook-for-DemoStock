@@ -27,13 +27,13 @@ def makeResponse(req):
 	result = req.get("result")
 	action = result.get("action")
 	
-	if x == 'stock.news':
+	if action == 'stock.news':
 		return getNewsDetails(req)
-	elif x == 'stock.research':
+	elif action == 'stock.research':
 		return getResearch(req)
-	#if x in 'bc':
+	#if action in 'bc':
 		# Fall-through by not using elif, but now the default case includes case 'a'!
-	#elif x in 'xyz':
+	#elif action in 'xyz':
 		# Do yet another thing
 	else:
 		return commonResponse("Sorry, I did't get you ?")
