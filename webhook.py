@@ -52,8 +52,8 @@ def getNewsDetails(req):
 	speech = "Today top new is : "
 	
 	for data in dataSet:
-		title = data.get("title")
- 		desc = data.get("description")
+		title = data["title"]
+ 		desc = data["description"]
  		speech = title + ' ' + desc
  		temp = temp + speech
 		
