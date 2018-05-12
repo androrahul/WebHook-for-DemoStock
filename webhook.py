@@ -25,26 +25,17 @@ def stock():
 def makeResponse(res):
 	speech = "This is news."
 	
+	response = commonResponse(speech)
+	
+	return response
+		
+		
+def commonResponse(msg):
 	return {
-			"speech":speech,
-			"displayText":speech,		
-			"fulfillmentText": "This is a text response",
-			"fulfillmentMessages": [
-				  {
-					"text": {
-					  "text": [
-						"lease tell me your first name"
-					  ]
-				 }
-			  }
-			],
-			"source": "apiai-demostock-webhook",
-			"payload": {},
-			"outputContexts": [],
-			"followupEventInput": {}
-		}
-	
-	
+			"speech":msg,
+			"displayText":msg,		
+			"source": "apiai-demostock-webhook"
+	}
 	
 if __name__ == '__main__':
     port = int(os.getenv('PORT', 5000))
