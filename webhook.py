@@ -54,7 +54,7 @@ def getNewsDetails(req):
 	for data in dataSet:
 		title = data["title"]
 		desc=data['description']
-		speech = title + ' ' + desc
+		speech = title + " " + desc
 		temp = temp + speech
 		
 	return commonResponse(temp)
