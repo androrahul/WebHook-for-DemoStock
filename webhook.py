@@ -31,7 +31,8 @@ def makeResponse(req):
 		return getNewsDetails(req)
 	elif action == 'stock.research':
 		return getResearch(req)
-	#if action in 'bc':
+	if action in 'action.Login':
+		return getLoginService(req)
 		# Fall-through by not using elif, but now the default case includes case 'a'!
 	#elif action in 'xyz':
 		# Do yet another thing
@@ -58,6 +59,28 @@ def getNewsDetails(req):
 		temp = temp + speech
 		
 	return commonResponse(temp)
+	
+def getLoginService(req):
+
+url = "http://13.228.67.143/ShareokasherApi/api/Login/userLogin"
+
+payload = "{\r\n  \"emailId\": \"rahul@itmines.com\",\r\n  \"password\": \"Rahul@123\"\r\n}"
+headers = {
+    'content-type': "application/json",
+    'cache-control': "no-cache",
+    'postman-token': "69436c9d-2097-6fdb-2822-622417061cb3"
+    }
+
+response = requests.request("POST", url, data=payload, headers=headers)
+
+#print(response.text)
+
+obj = r.json()
+
+response = 'Thank you user : ' + obj['id']
+
+return commonResponse(temp)
+
 
 def getResearch(req):
 		msg="Today's fundamental research call. Buy Grasim Industries Limited. C M P rupees 1089. Target price Rupees 1300 with potential upside of 18 percent."
