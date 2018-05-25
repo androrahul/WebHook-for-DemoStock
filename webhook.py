@@ -62,6 +62,9 @@ def getNewsDetails(req):
 	
 def getLoginService(req):
 
+	username = req['result']['parameters']['username']
+	password = req['result']['parameters']['password']
+
 	url = "http://13.228.67.143/ShareokasherApi/api/Login/userLogin"
 
 	payload = "{\r\n  \"emailId\": \"rahul@itmines.com\",\r\n  \"password\": \"Rahul@123\"\r\n}"
