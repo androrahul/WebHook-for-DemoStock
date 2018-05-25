@@ -62,24 +62,24 @@ def getNewsDetails(req):
 	
 def getLoginService(req):
 
-url = "http://13.228.67.143/ShareokasherApi/api/Login/userLogin"
+	url = "http://13.228.67.143/ShareokasherApi/api/Login/userLogin"
 
-payload = "{\r\n  \"emailId\": \"rahul@itmines.com\",\r\n  \"password\": \"Rahul@123\"\r\n}"
-headers = {
-    'content-type': "application/json",
-    'cache-control': "no-cache",
-    'postman-token': "69436c9d-2097-6fdb-2822-622417061cb3"
-    }
+	payload = "{\r\n  \"emailId\": \"rahul@itmines.com\",\r\n  \"password\": \"Rahul@123\"\r\n}"
+	headers = {
+		'content-type': "application/json",
+		'cache-control': "no-cache",
+		'postman-token': "69436c9d-2097-6fdb-2822-622417061cb3"
+		}
 
-response = requests.request("POST", url, data=payload, headers=headers)
+	response = requests.request("POST", url, data=payload, headers=headers)
 
-#print(response.text)
+	#print(response.text)
 
-obj = r.json()
+	obj = r.json()
 
-response = 'Thank you user : ' + obj['id']
+	response = 'Thank you user : ' + obj['id']
 
-return commonResponse(temp)
+	return commonResponse(temp)
 
 
 def getResearch(req):
