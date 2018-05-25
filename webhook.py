@@ -73,9 +73,9 @@ def getLoginService(req):
 
 	response = requests.request("POST", url, data=payload, headers=headers)
 
-	#print(response.text)
+	print(response.text)
 
-	obj = r.json()
+	obj = response.json()
 
 	response = 'Thank you user : ' + obj['id']
 
