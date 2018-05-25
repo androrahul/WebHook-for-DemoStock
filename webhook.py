@@ -77,7 +77,7 @@ def getLoginService(req):
 
 	obj = response.json()
 	
-	if obj['responseCode'] == 1
+	if obj['responseCode'] == 1:
 		temp = 'Thank you user : ' + str(obj['id'])
 	else:
 		temp = obj['responseMessage']
