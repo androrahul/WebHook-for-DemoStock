@@ -77,7 +77,7 @@ def getLoginService(req):
 
 	obj = response.json()
 
-	response = 'Thank you user : ' + obj['id']
+	response = 'Thank you user : ' + str(obj['id'])
 
 	return commonResponse(temp)
 
