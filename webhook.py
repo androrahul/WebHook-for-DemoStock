@@ -100,11 +100,7 @@ def commonResponse(msg):
 	return {
 			"speech":msg,
 			"displayText":msg,
-			"source": "apiai-demostock-webhook",
-			"contextOut":{
-				"username" : "123",
-				"password": "786"
-			}
+			"source": "apiai-demostock-webhook"
 	}
 	
 if __name__ == '__main__':
