@@ -64,6 +64,7 @@ def getLoginService(req):
 
 	username = req['result']['parameters']['username']
 	password = req['result']['parameters']['password']
+	id = 0
 
 	url = "http://13.228.67.143/ShareokasherApi/api/Login/userLogin"
 
@@ -85,11 +86,12 @@ def getLoginService(req):
 	obj = response.json()
 	
 	if obj['responseCode'] == 1:
+		id = obj['id']
 		temp = 'Thank you user : ' + str(obj['id'])
 	else:
 		temp = obj['responseMessage']
 
-	return commonResponse(temp)
+	return commonSessionResponse(temp, id, 'test-context')
 
 
 def getResearch(req):
@@ -101,6 +103,22 @@ def commonResponse(msg):
 			"speech":msg,
 			"displayText":msg,
 			"source": "apiai-demostock-webhook"
+	}
+	
+def commonSessionResponse(msg, id, contextName):
+	return {
+			"speech":msg,
+			"displayText":msg,
+			"source": "apiai-demostock-webhook",
+			"contextOut":[
+				{
+					"name" : contextName,
+					"lifespan": 99,
+					"parameters" : {
+						"id" : id
+					}
+				}
+			]
 	}
 	
 if __name__ == '__main__':
