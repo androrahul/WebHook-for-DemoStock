@@ -76,8 +76,11 @@ def getLoginService(req):
 	print(response.text)
 
 	obj = response.json()
-
-	temp = 'Thank you user : ' + str(obj['id'])
+	
+	if obj['responseCode'] == 1
+		temp = 'Thank you user : ' + str(obj['id'])
+	else:
+		temp = obj['responseMessage']
 
 	return commonResponse(temp)
 
