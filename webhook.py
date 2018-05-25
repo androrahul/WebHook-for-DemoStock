@@ -67,11 +67,15 @@ def getLoginService(req):
 
 	url = "http://13.228.67.143/ShareokasherApi/api/Login/userLogin"
 
-	payload = "{\r\n  \"emailId\": \"rahul@itmines.com\",\r\n  \"password\": \"Rahul@123\"\r\n}"
+	payload = {
+				"emailId": username,
+				"password": password
+			}
+			
+	payload = json.dumps(payload, indent=4)
+				
 	headers = {
-		'content-type': "application/json",
-		'cache-control': "no-cache",
-		'postman-token': "69436c9d-2097-6fdb-2822-622417061cb3"
+		'content-type': "application/json"
 		}
 
 	response = requests.request("POST", url, data=payload, headers=headers)
