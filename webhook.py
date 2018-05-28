@@ -33,6 +33,8 @@ def makeResponse(req):
 		return getResearch(req)
 	if action in 'action.Login':
 		return getLoginService(req)
+	if action in 'input.welcome':
+		return getUsername(req)
 		# Fall-through by not using elif, but now the default case includes case 'a'!
 	#elif action in 'xyz':
 		# Do yet another thing
@@ -59,6 +61,23 @@ def getNewsDetails(req):
 		temp = temp + speech
 		
 	return commonResponse(temp)
+	
+def getUsername(req):
+	
+	url = "https://itminesdemo.auth0.com/userinfo"
+
+	headers = {
+		'authorization': "Bearer 4kGOIrDFJS3rzGGoHjR6gXbRWJGtn8SO",
+		'cache-control': "no-cache",
+		'postman-token': "83689df6-f3e3-30bb-a2de-ed30d1211721"
+		}
+
+	response = requests.request("GET", url, headers=headers)
+	print(response.text)
+	obj = response.json()
+	msg = "Hi " + obj['name'] + ", Welcome to demo!"
+	return commonResponse(msg)
+	
 	
 def getLoginService(req):
 
