@@ -64,7 +64,7 @@ def getNewsDetails(req):
 	
 def getUsername(req):
 	
-	accessToken = "Bearer " + req['user']['accessToken']
+	accessToken = "Bearer " + req['originalRequest']['user']['accessToken']
 	
 	print(accessToken)
 	
