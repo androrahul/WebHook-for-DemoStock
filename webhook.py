@@ -64,10 +64,14 @@ def getNewsDetails(req):
 	
 def getUsername(req):
 	
+	accessToken = "Bearer " + req['user']['accessToken']
+	
+	print(accessToken)
+	
 	url = "https://itminesdemo.auth0.com/userinfo"
 
 	headers = {
-		'authorization': "Bearer 4kGOIrDFJS3rzGGoHjR6gXbRWJGtn8SO",
+		'authorization': accessToken,
 		'cache-control': "no-cache",
 		'postman-token': "83689df6-f3e3-30bb-a2de-ed30d1211721"
 		}
