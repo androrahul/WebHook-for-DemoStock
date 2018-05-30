@@ -58,7 +58,8 @@ def getNewsDetails(req):
 		title = data["title"]
 		desc=data['description']
 		speech = title + " " + desc
-		temp = temp + speech
+		break
+		#temp = temp + speech
 		
 	return commonResponse(speech)
 	
