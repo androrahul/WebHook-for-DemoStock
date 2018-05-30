@@ -60,7 +60,7 @@ def getNewsDetails(req):
 		speech = title + " " + desc
 		temp = temp + speech
 		
-	return commonResponse(temp)
+	return commonResponse(speech)
 	
 def getUsername(req):
 	
