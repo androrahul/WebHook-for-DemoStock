@@ -45,7 +45,7 @@ def makeResponse(req):
 def getNewsDetails(req):
 
 	# Request to get current news
-	r=requests.get('https://newsapi.org/v2/top-headlines?country=in&apiKey=2e1b4cacd0694ac193f8e2659b82bed2')
+	r=requests.get('')
     
 	# Output response of news API
 	json_object = r.json()
@@ -69,7 +69,8 @@ def getUsername(req):
 	
 	print(accessToken)
 	
-	url = "https://itminesdemo.auth0.com/userinfo"
+	# Add your url
+	url = ""
 
 	headers = {
 		'authorization': accessToken,
@@ -90,7 +91,8 @@ def getLoginService(req):
 	password = req['result']['parameters']['password']
 	id = 0
 
-	url = "http://13.228.67.143/ShareokasherApi/api/Login/userLogin"
+	# Add your url
+	url = ""
 
 	payload = {
 				"emailId": username,
